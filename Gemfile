@@ -25,6 +25,7 @@ group :test, :development do
   gem "capybara"
   gem "factory_girl_rails", "~> 3.0"
   gem 'guard-rspec'
+  gem 'growl'
 end
 
 gem 'jquery-rails'
