@@ -23,6 +23,7 @@ end
 group :test, :development do
   gem 'rspec-rails', "~> 2.0"
   gem "capybara"
+  gem "factory_girl_rails", "~> 3.0"
 end
 
 gem 'jquery-rails'
