@@ -3,5 +3,6 @@
 FactoryGirl.define do
   factory :post do
     title "MyString"
+    content "Content to Post"
   end
 end
