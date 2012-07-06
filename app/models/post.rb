@@ -4,4 +4,6 @@ class Post < ActiveRecord::Base
   validates :title, uniqueness: { case_sensitive: false },
                     presence: true,
                     length: { minimum: 5 }
+
+  validates :content, presence: true
 end
