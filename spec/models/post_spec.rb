@@ -17,6 +17,8 @@ describe Post do
   end
 
   context 'content' do
-    it 'should be required'
+    it 'should be required' do
+      build( :post, content: '' ).should_not be_valid
+    end
   end
 end
