@@ -6,6 +6,7 @@ gem 'rails', '3.2.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
+gem 'simple_form'
 
 
 # Gems used only for assets and not required
@@ -26,6 +27,7 @@ group :test, :development do
   gem "factory_girl_rails", "~> 3.0"
   gem 'guard-rspec'
   gem 'growl'
+  gem 'twitter-bootstrap-rails'
 end
 
 gem 'jquery-rails'
