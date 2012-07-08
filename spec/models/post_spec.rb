@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Post do
   context 'title' do
-    it 'should not bed allowed to have duplicates' do
+    it 'should not be allowed to have duplicates' do
       post = create( :post )
       build( :post, title: post.title ).should_not be_valid
     end

@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title
+  attr_accessible :title, :content
 
   validates :title, uniqueness: { case_sensitive: false },
                     presence: true,
