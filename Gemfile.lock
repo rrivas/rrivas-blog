@@ -189,7 +189,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt-ruby (~> 3.0.0)
+  bcrypt-ruby
   capybara
   coffee-rails (~> 3.2.1)
   factory_girl_rails (~> 3.0)
