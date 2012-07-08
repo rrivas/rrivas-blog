@@ -9,7 +9,10 @@ describe User do
   
   context 'Last Name' do
     it "should be at least 2 characters long"
-    it "should be letters only"
+    it "should be alphabetic characters only" do
+      build( :user, last_name: 'a32vd23' ).should_not be_valid
+    end
+
     it "should be required" do
       build( :user, last_name: '' ).should_not be_valid
     end
