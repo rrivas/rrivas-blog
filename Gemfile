@@ -28,6 +28,7 @@ group :test, :development do
   gem 'guard-rspec'
   gem 'growl'
   gem 'twitter-bootstrap-rails'
+  gem 'haml-rails'
 end
 
 gem 'jquery-rails'
