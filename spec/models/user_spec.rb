@@ -2,9 +2,17 @@ require 'spec_helper'
 
 describe User do
   context 'First Name' do
-    it "should be at least 2 characters long"
-    it "should be letters only"
-    it "should be required"
+    it "should be at least 2 characters long" do
+      build( :user, first_name: 'a' ).should_not be_valid
+    end
+
+    it "should be letters only" do
+      build( :user, first_name: 'aasdf3243').should_not be_valid
+    end
+
+    it "should be required" do
+      build( :user, first_name: '' ).should_not be_valid
+    end
   end
   
   context 'Last Name' do
