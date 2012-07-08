@@ -1,5 +1,37 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'First Name' do
+    it "should be at least 2 characters long"
+    it "should be letters only"
+    it "should be required"
+  end
+  
+  context 'Last Name' do
+    it "should be at least 2 characters long"
+    it "should be letters only"
+    it "should be required" do
+      build( :user, last_name: '' ).should_not be_valid
+    end
+  end
+
+  context 'Email' do
+    it "should be required" do
+      build( :user, email: '' ).should_not be_valid
+    end
+
+    it "should be unique" do
+      user = create( :user )
+      build( :user, email: user.email ).should_not be_valid
+    end
+
+    it "should be case insensitive" do
+      user = create( :user )
+      build( :user, email: user.email.upcase ).should_not be_valid
+    end
+  end
+
+  context 'Password' do
+
+  end
 end
