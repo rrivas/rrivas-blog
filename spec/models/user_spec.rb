@@ -46,6 +46,14 @@ describe User do
   end
 
   context 'Password' do
+    it "should create a salt" do
+      user = create( :user )
+      user.password_salt.should_not be_blank
+    end
 
+    it "should create a hash" do
+      user = create( :user )
+      user.password_hash.should_not be_blank
+    end
   end
 end
