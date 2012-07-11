@@ -46,7 +46,10 @@ describe User do
   end
 
   context 'Password' do
-    it "should be required" 
+    it "should be required" do
+      build( :user, password: nil ).should_not be_valid
+    end
+    
     it "should require at least 1 digit"
     it "should be at least 8 characters long"
   end
