@@ -7,6 +7,7 @@ FactoryGirl.define do
     sequence :email do |n|
       "myemail#{n}@email.com"
     end
-    password "password"
+    
+    password "password1"
   end
 end
