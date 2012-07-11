@@ -17,5 +17,6 @@ class User < ActiveRecord::Base
                     presence: true,
                     format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, on: :create }
 
-  validates :password, length: { minimum: 8 }
+  validates :password, length: { minimum: 8 },
+                       format: { with: /^(?=.*\d)(?=.*([a-z]|[A-Z]))([\x20-\x7E]){8,}$/i, on: :create }
 end

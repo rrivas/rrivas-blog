@@ -51,9 +51,11 @@ describe User do
     end
 
     it "should require at least 1 digit" do
-      build( :user, password: 'abcdef1' ).should_not be_valid
+      build( :user, password: 'abcdefgh' ).should_not be_valid
     end
 
-    it "should be at least 8 characters long"
+    it "should be at least 8 characters long" do
+      build( :user, password: 'abcdef1').should_not be_valid
+    end
   end
 end
