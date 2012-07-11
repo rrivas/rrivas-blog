@@ -46,14 +46,16 @@ describe User do
   end
 
   context 'Password' do
-    it "should create a salt" do
-      user = create( :user )
-      user.password_salt.should_not be_blank
+    it "should be required" do
+      build( :user, password: nil ).should_not be_valid
     end
 
-    it "should create a hash" do
-      user = create( :user )
-      user.password_hash.should_not be_blank
+    it "should require at least 1 digit" do
+      build( :user, password: 'abcdefgh' ).should_not be_valid
+    end
+
+    it "should be at least 8 characters long" do
+      build( :user, password: 'abcdef1').should_not be_valid
     end
   end
 end
