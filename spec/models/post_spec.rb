@@ -21,4 +21,10 @@ describe Post do
       build( :post, content: '' ).should_not be_valid
     end
   end
+
+  context 'authors' do
+    it 'should be required' do
+      build( :post, author: nil ).should_not be_valid
+    end
+  end
 end

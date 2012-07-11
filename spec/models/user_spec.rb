@@ -25,13 +25,13 @@ describe User do
     end
 
     it "should be required" do
-      build( :user, last_name: '' ).should_not be_valid
+      build( :user, last_name: nil ).should_not be_valid
     end
   end
 
   context 'Email' do
     it "should be required" do
-      build( :user, email: '' ).should_not be_valid
+      build( :user, email: nil ).should_not be_valid
     end
 
     it "should be unique" do
