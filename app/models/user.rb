@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   attr_accessor :password
   before_save :encrypt_password
 
+  has_many :posts
+
   validates :first_name, presence: true,
                          format: { with: /([a-z][A-Z]){1,}/, on: :create },
                          length: { minimum: 2 }
