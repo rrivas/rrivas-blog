@@ -6,5 +6,7 @@ FactoryGirl.define do
       "MyString#{n}"
     end
     content "Content to Post"
+
+    association :author, factory: :user
   end
 end
