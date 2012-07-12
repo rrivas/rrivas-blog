@@ -9,5 +9,6 @@ FactoryGirl.define do
     end
     
     password "password1"
+    active true
   end
 end

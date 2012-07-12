@@ -58,4 +58,10 @@ describe User do
       build( :user, password: 'abcdef1').should_not be_valid
     end
   end
+
+  context 'Active' do
+    it "should be required" do
+      build( :user, active: nil ).should_not be_valid
+    end
+  end
 end
