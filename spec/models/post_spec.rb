@@ -26,5 +26,9 @@ describe Post do
     it 'should be required' do
       build( :post, author: nil ).should_not be_valid
     end
+
+    it 'should be active' do
+      build( :post_with_inactive_user ).should_not be_valid
+    end
   end
 end

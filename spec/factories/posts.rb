@@ -8,5 +8,9 @@ FactoryGirl.define do
     content "Content to Post"
 
     association :author, factory: :user
+
+    factory :post_with_inactive_user do
+      association :author, factory: :user, strategy: :build, active: false
+    end
   end
 end
