@@ -19,15 +19,34 @@ describe UsersController do
                            active: @user.active }
     end
 
-    it 'builds a user and saves it' do
-      post :create, user: @user_attributes
-      assigns( :user ).new_record?.should be_false
+    describe 'with valid params' do
+      it 'creates a new user' do
+        expect{
+          post :create, user: @user_attributes
+        }.to change(User, :count).by(1)
+      end
+
+      it 'assigns new user as @user' do
+        post :create, user: @user_attributes
+        assigns( :user ).should be_a( User )
+      end
+
+      it 'redirects to user show page on succesful save' do
+        post :create, user: @user_attributes
+        response.should redirect_to( root_url )
+      end
     end
 
-    it 'redirects to user show page on succesful save'
-    it 'redirects to user new page on unsuccesful save' do
-      post :create, user: @user_attributes.merge( password: nil )
-      response.should render_template( :new )
+    describe 'with invalid params' do
+      it 'should build a new user as @user' do
+        post :create, user: {}
+        assigns( :user ).should be_a_new( User )
+      end
+
+      it 'redirects to user new page on unsuccesful save' do
+        post :create, user: {}
+        response.should render_template( :new )
+      end
     end
   end
 end

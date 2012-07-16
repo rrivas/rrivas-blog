@@ -20,7 +20,7 @@ describe 'Users' do
           @user = build( :user )
         end
 
-        it "should post to user#create with valid attributes" do
+        it "should post to user#create with valid attributes and display a flash notice" do
           fill_in 'First name', with: @user.first_name
           fill_in 'Last name', with: @user.last_name
           fill_in 'Email', with: @user.email
@@ -28,6 +28,8 @@ describe 'Users' do
           fill_in 'Password confirmation', with: @user.password
 
           page.find_button('Sign Up').click
+
+          page.should have_content('Thank you for signing up')
         end
       end
     end
