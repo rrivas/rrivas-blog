@@ -7,6 +7,12 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.brand{ href: '#' }
+            rrivas.com
+
     - flash.each do |name, msg|
       .alert{ class: "alert-#{name == :notice ? 'success' : 'error'}"}
         %a.close{ :'data-dismiss' => 'alert' }
