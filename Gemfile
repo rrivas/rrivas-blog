@@ -31,6 +31,7 @@ group :test, :development do
   gem 'haml-rails'
   gem "launchy", ">= 2.0.5"
   gem "awesome_print"
+  gem 'lorem'
 end
 
 gem 'jquery-rails'
