@@ -14,6 +14,8 @@ describe 'Users' do
       it "should exists" do
         page.has_button?('Sign Up').should be_true
       end
+
+      it "should post to user#create with valid attributes"
     end
 
     describe 'first name' do
