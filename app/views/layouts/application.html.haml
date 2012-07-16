@@ -12,4 +12,10 @@
         %a.close{ :'data-dismiss' => 'alert' }
           x
         = msg
-    = yield
+    .container
+      .row
+        .span9
+          = yield
+        .span3
+          %h2= "About Us"
+          %p= Lorem::Base.new('paragraphs', 2).output
