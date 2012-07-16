@@ -6,11 +6,11 @@ class User < ActiveRecord::Base
   has_many :posts
 
   validates :first_name, presence: true,
-                         format: { with: /([a-z][A-Z]){1,}/, on: :create },
+                         format: { with: /(\A[A-Z\s][^0-9]+\z)/i, on: :create },
                          length: { minimum: 2 }
 
   validates :last_name, presence: true,
-                        format: { with: /([a-z][A-Z]){1,}/, on: :create },
+                        format: { with: /(\A[A-Z\s][^0-9]+\z)/, on: :create },
                         length: { minimum: 2 }
 
   validates :email, uniqueness: { case_sensitive: false },

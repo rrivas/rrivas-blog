@@ -29,6 +29,8 @@ group :test, :development do
   gem 'growl'
   gem 'twitter-bootstrap-rails'
   gem 'haml-rails'
+  gem "launchy", ">= 2.0.5"
+  gem "awesome_print"
 end
 
 gem 'jquery-rails'

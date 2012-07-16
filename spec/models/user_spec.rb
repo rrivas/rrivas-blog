@@ -13,11 +13,13 @@ describe User do
     it "should be required" do
       build( :user, first_name: '' ).should_not be_valid
     end
+
+    it "should not allow special characters"
   end
   
   context 'Last Name' do
     it "should be at least 2 characters long" do
-      build( :user, last_name: 'aa').should_not be_valid
+      build( :user, last_name: 'a').should_not be_valid
     end
 
     it "should be alphabetic characters only" do
@@ -27,6 +29,8 @@ describe User do
     it "should be required" do
       build( :user, last_name: nil ).should_not be_valid
     end
+
+    it "should not allow special characters"
   end
 
   context 'Email' do
