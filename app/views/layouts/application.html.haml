@@ -10,8 +10,32 @@
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
+          %a.btn.btn-navbar{ :'data-toggle' => "collapse", :'data-target' => ".nav-collapse" }
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
           %a.brand{ href: '#' }
             rrivas.com
+          .nav-collapse
+            %ul.nav
+              %li= link_to "Browse Products"
+              %li= link_to "Price List" 
+              %li= link_to "Contact Us" 
+              %li= link_to "Cart"
+              %li.dropdown
+                %a.dropdown-toggle{ href: '#', :'data-toggle' => 'dropdown' }
+                  Account
+                  %b.caret
+                %ul.dropdown-menu
+                  %li
+                    %a
+                      stuff
+                  %li
+                    %a
+                      stuff
+                  %li
+                    %a
+                      stuff
 
     - flash.each do |name, msg|
       .alert{ class: "alert-#{name == :notice ? 'success' : 'error'}"}
