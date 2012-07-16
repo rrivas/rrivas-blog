@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new( params[:user] )
 
     if @user.save
-      redirect_to root_url
+      redirect_to :root, notice: 'Thank you for signing up'
     else
       render :new
     end
