@@ -10,7 +10,11 @@ describe 'Users' do
       page.should have_css('.page-header h1.title', text: 'New User')
     end
 
-    it "should have a submit button"
+    context "'sign up' button" do
+      it "should exists" do
+        page.has_button?('Sign Up').should be_true
+      end
+    end
 
     describe 'first name' do
       it "should have a field" do
