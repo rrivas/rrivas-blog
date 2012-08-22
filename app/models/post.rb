@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :title, :content, :author
+  attr_accessible :title, :content, :author_id
 
   belongs_to :author, class_name: 'User'
 

@@ -68,4 +68,11 @@ describe User do
       build( :user, active: nil ).should_not be_valid
     end
   end
+
+  context 'Full Name' do
+    it 'should return first and last name combined' do
+      user = create( :user )
+      user.full_name.should eq("#{user.first_name} #{user.last_name}")
+    end
+  end
 end

@@ -33,3 +33,11 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
 end
+
+def sign_user_in
+  @user = create( :user )
+  visit root_path
+  fill_in( 'signin_email', with: @user.email )
+  fill_in( 'signin_password', with: @user.password )
+  click_button('Sign in')
+end

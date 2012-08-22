@@ -21,4 +21,8 @@ class User < ActiveRecord::Base
                        format: { with: /^(?=.*\d)(?=.*([a-z]|[A-Z]))([\x20-\x7E]){8,}$/i, on: :create }
 
   validates :active, presence: true
+
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
 end
