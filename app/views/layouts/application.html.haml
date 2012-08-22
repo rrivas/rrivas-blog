@@ -37,7 +37,7 @@
                     %a
                       stuff
               %li
-                %form.navbar-form.pull-left{ action: new_session_path, method: 'post' }
+                %form.navbar-form.pull-left{ action: sessions_path, method: 'post' }
                   %input.input-small.span2#signin_email{ type: 'text', name: 'user[email]', placeholder: 'Email' }
                   %input.input-small.span2#signin_password{ type: 'password', name: 'user[password]', placeholder: 'Password' }
                   %button.btn#signin_button{ type: 'submit' }
