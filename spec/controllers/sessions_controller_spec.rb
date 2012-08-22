@@ -18,6 +18,11 @@ describe SessionsController do
         post :create, user: { email: @user.email, password: 'NOTTHIS' }
         controller.session[:user_id].should be_blank
       end
+
+      it 'should render new template' do
+        post :create, user: { email: @user.email, password: 'NOTTHIS' }
+        response.should render_template('new')
+      end
     end
 
   end

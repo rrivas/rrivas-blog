@@ -49,12 +49,20 @@ describe 'Singning in' do
       page.should have_content('Invalid email or password')
     end
 
-    if 'should render the new template' do
-      page.current_path.should eq(new_session_path)
+    it 'should render the new template' do
+      page.current_path.should eq(sessions_path)
     end
 
     it 'should display the email address in the email field' do
-      find_field('signin_email').value.should eq( @user.email )
+      find_field('email').value.should eq( @user.email )
+    end
+
+    it 'should submit the secondary form if the information is correct' do
+      fill_in( 'email', with: @user.email )
+      fill_in( 'password', with: @user.password )
+      click_button('signin')
+
+      page.should have_content('Signed in Successfully')
     end
   end
 
