@@ -28,6 +28,10 @@ describe SessionsController do
   end
 
   context 'DELETE Destroy' do
-
+    it 'should delete the session user id' do
+      sign_user_in
+      delete :destroy
+      controller.session[:user_id].should be_blank
+    end
   end
 end
