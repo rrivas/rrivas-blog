@@ -1,8 +1,9 @@
 RrivasBlog::Application.routes.draw do
-  root :to => 'posts#index'
+  root :to => 'home#index'
   resources :posts
   # resources :users
   resources :sessions
+  resources :home
 
   match 'sign_out' => 'sessions#destroy'  
   # The priority is based upon order of creation:
