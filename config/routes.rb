@@ -1,7 +1,7 @@
 RrivasBlog::Application.routes.draw do
   root :to => 'posts#index'
   resources :posts
-  resources :users
+  # resources :users
   resources :sessions
 
   match 'sign_out' => 'sessions#destroy'  
